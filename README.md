@@ -1,18 +1,41 @@
-# twitter-calculator
-A twitter bot that recognizes simple mathematical expressions.
-The bot is currently running.
-Test it by sending a tweet to @twit_calc
+# Twitter Calculator
+A twitter bot that recognizes and replies to simple mathematical expressions.
 
 ## Getting Started
-Replace with your own keys in `configexample.js`. You can get keys by signing up for twitter and searching through the devvelopers page.
-
-## Running the bot
-To run the bot input the following command into terminal/cmd
+To begin sign up for a twitter developers account.
+Create an app to acquire the necessary keys to connect to the twitter API.  In the `config.js` replace the keys with your own.
 ```
-npm install
-node script.js
+module.exports = {
+  consumer_key: '---',
+  consumer_secret: '---',
+  access_token: '---',
+  access_token_secret: '---'
+};
 ```
 
+This bot uses the following npm packages.<br/>
+`twit`
+`mathjs`
 
-Created by
-Atli Marcher Pálsson
+## Installing
+This bot is run on nodejs.
+Begin by installing the dependencies by running the following commands
+```
+$ cd my_project_folder/
+$ npm install
+```
+
+## Running
+
+Once all dependencies are installed you should be able to run it by running the command
+```
+$ node bot.js
+```
+or
+```
+npm start
+```
+
+## Author
+
+<b> Atli Marcher Pálsson </b> - University of Iceland
