@@ -33,9 +33,5 @@ $ node bot.js
 ```
 or
 ```
-npm start
+$ npm start
 ```
-
-## Author
-
-<b> Atli Marcher Pálsson </b> - University of Iceland
