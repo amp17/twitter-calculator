@@ -6,14 +6,16 @@ const config = require('./config.js');
 
 const T = new Twit(config);
 
+const regex = /\d+(\.\d+)?([+-/*^]\d+(\.\d+)?)*/g;
+
 const stream = T.stream('user');
 stream.on('tweet', tweet);
 
 function tweet(msg) {
   if (msg.in_reply_to_screen_name === 'twit_calc' && msg.user.screen_name !== 'twit_calc') {
     console.log('Got message');
-    const txt = msg.text.replace(/@|[a-zA-z]+|\'|\./g, '');
-    const expr = txt.replace(/\s+/g, '');
+    const txt = msg.text.replace(/\s+/g, '');
+    const expr = txt.match(regex).join('');
     const user = msg.user.screen_name;
     const id = msg.id;
     const patt = /(\d+(\.\d+)?[+-/*^]\d+(\.\d+)?)*/g;
