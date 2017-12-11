@@ -18,8 +18,7 @@ function tweet(msg) {
     const expr = txt.match(regex).join('');
     const user = msg.user.screen_name;
     const id = msg.id;
-    const patt = /(\d+(\.\d+)?[+-/*^]\d+(\.\d+)?)*/g;
-    if (expr && patt.test(expr)) reply(`@${user} ${expr} = ${math.eval(expr)}`, id);
+    if (expr) reply(`@${user} ${expr} = ${math.eval(expr)}`, id);
     else reply(`@${user} expression not valid`, id);
   }
 }
